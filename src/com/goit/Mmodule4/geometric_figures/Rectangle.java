@@ -1,4 +1,4 @@
-package com.goit.module4.geometric_figures;
+package com.goit.Mmodule4.geometric_figures;
 
 public class Rectangle extends Figure {
     private double sideA;

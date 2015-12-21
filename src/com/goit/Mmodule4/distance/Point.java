@@ -1,4 +1,4 @@
-package com.goit.module4.distance;
+package com.goit.Mmodule4.distance;
 
 public class Point {
     private int x;

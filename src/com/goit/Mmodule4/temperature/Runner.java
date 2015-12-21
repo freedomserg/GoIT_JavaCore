@@ -1,4 +1,4 @@
-package com.goit.module4.temperature;
+package com.goit.Mmodule4.temperature;
 
 public class Runner {
     public static void main(String[] args) {
