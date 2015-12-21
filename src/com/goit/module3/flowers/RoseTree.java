@@ -1,4 +1,4 @@
-package com.goit.Mmodule3.flowers;
+package com.goit.module3.flowers;
 
 import java.util.ArrayList;
 import java.util.List;
