@@ -1,4 +1,4 @@
-package com.goit.module3.musical_instruments;
+package com.goit.Mmodule3.musical_instruments;
 
 import java.util.ArrayList;
 import java.util.List;
