@@ -1,4 +1,4 @@
-package com.goit.Module1.FirstProgram;
+package com.goit.module1.first_program;
 
 public class FirstConsoleProgram {
     public static void main(String[] args) {

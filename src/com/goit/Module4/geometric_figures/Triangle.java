@@ -1,4 +1,4 @@
-package com.goit.Module4.GeometricFigures;
+package com.goit.module4.geometric_figures;
 
 public class Triangle extends Figure {
     private double sideA;

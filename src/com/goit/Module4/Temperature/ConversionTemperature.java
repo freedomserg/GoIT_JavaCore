@@ -1,4 +1,4 @@
-package com.goit.Module4.Temperature;
+package com.goit.module4.temperature;
 
 public class ConversionTemperature {
 

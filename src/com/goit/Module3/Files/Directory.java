@@ -1,4 +1,4 @@
-package com.goit.Module3.Files;
+package com.goit.module3.files;
 
 import java.util.ArrayList;
 import java.util.List;

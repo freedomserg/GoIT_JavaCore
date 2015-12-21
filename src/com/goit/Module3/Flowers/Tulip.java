@@ -1,4 +1,4 @@
-package com.goit.Module3.Flowers;
+package com.goit.module3.flowers;
 
 public class Tulip extends Flower {
 }

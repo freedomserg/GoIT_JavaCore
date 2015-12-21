@@ -1,4 +1,4 @@
-package com.goit.Module3.MusicalInstruments;
+package com.goit.module3.musical_instruments;
 
 public class Guitar extends MusicalInstrument {
 }

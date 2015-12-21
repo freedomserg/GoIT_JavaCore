@@ -1,4 +1,4 @@
-package com.goit.Module4.Distance;
+package com.goit.module4.distance;
 
 public class CalculateDistance {
     public static void main(String[] args) {
