@@ -1,6 +1,6 @@
 package com.goit.module4.temperature;
 
-public class ConversionTemperature {
+public class TemperatureConversionUtilities {
 
     public static double celsiusToFahrenheit(double celsiusTemperature) {
         return celsiusTemperature * 9 / 5 + 32;

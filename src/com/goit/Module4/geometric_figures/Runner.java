@@ -3,7 +3,7 @@ package com.goit.module4.geometric_figures;
 import java.util.ArrayList;
 import java.util.List;
 
-public class CalculateSquareOfFigures {
+public class Runner {
 
     public static void main(String[] args) {
         List<Figure> figures = new ArrayList<>();
