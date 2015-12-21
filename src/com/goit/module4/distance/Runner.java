@@ -1,4 +1,4 @@
-package com.goit.Mmodule4.distance;
+package com.goit.module4.distance;
 
 public class Runner {
     public static void main(String[] args) {

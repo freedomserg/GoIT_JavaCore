@@ -1,4 +1,4 @@
-package com.goit.Mmodule4.geometric_figures;
+package com.goit.module4.geometric_figures;
 
 public abstract class Figure {
     protected double square;

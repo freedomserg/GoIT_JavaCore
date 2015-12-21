@@ -1,4 +1,4 @@
-package com.goit.Mmodule4.geometric_figures;
+package com.goit.module4.geometric_figures;
 
 import java.util.ArrayList;
 import java.util.List;
