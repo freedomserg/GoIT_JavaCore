@@ -1,4 +1,4 @@
-package com.goit.syrotskiy.module6.exceptionsMod;
+package com.goit.syrotskiy.module6.exceptionsHandling;
 
 public class CarException extends Exception {
     private String errorCode = "Unknown_Exception";

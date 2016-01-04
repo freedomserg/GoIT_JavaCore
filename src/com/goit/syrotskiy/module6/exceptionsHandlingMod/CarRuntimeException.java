@@ -1,12 +1,12 @@
-package com.goit.syrotskiy.module6.Exceptions;
+package com.goit.syrotskiy.module6.exceptionsHandlingMod;
 
-public class CarException extends Exception {
+public class CarRuntimeException extends RuntimeException {
     private String errorCode = "Unknown_Exception";
 
-    public CarException() {
+    public CarRuntimeException() {
     }
 
-    public CarException(String message) {
+    public CarRuntimeException(String message) {
         super(message);
     }
 

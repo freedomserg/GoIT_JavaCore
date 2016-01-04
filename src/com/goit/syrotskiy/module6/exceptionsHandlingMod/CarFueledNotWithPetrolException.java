@@ -1,4 +1,4 @@
-package com.goit.syrotskiy.module6.Exceptions;
+package com.goit.syrotskiy.module6.exceptionsHandlingMod;
 
 public class CarFueledNotWithPetrolException extends CarException {
     public CarFueledNotWithPetrolException() {

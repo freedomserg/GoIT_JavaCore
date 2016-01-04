@@ -1,4 +1,4 @@
-package com.goit.syrotskiy.module6.Exceptions;
+package com.goit.syrotskiy.module6.exceptionsHandlingMod;
 
 public class Runner {
 
@@ -8,7 +8,7 @@ public class Runner {
             Driver driver = new Driver();
             //driver.setFastened(true);
             Car car = new Car();
-            //car.setDriver(driver);
+            car.setDriver(driver);
             //car.setFuel(Fuel.Petrol);
             car.move();
         } catch (CarException ex) {
@@ -20,10 +20,10 @@ public class Runner {
         switch(ex.getErrorCode()) {
             case "THE_DRIVER_IS_NOT_FASTENED_EXCEPTION":
                 System.out.println("[Error]: first fasten your seat belt, then you can go!");
-                break;
+                throw new DriverIsNotFastenedRuntimeException();
             case "THE_CAR_IS_FUELED_NOT_WITH_PETROL_EXCEPTION":
                 System.out.println("[Error]: the car can't drive, first fuel it with petrol!");
-                break;
+                throw new CarFueledNotWithPetrolRuntimeException();
              default:
                  System.out.println("[Error]: Unknown exception raised. " + ex.getMessage());
                  ex.printStackTrace();

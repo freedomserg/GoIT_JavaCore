@@ -1,4 +1,4 @@
-package com.goit.syrotskiy.module6.exceptionsMod;
+package com.goit.syrotskiy.module6.exceptionsHandling;
 
 public class Driver {
     private boolean fastened;
