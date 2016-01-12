@@ -29,20 +29,20 @@ public class Car {
         this.fuel = fuel;
     }
 
-    public void move() throws CarException {
+    public void move() {
         try {
-            if (driver == null) throw new IllegalArgumentException("[Error]: driver is null!");
+            if (driver == null) throw new IllegalStateException("[Error]: driver is null!");
             if (!driver.isFastened()) throw new DriverIsNotFastenedException();
 
-            if (fuel == null) throw new IllegalArgumentException("[Error]: fuel is null!");
+            if (fuel == null) throw new IllegalStateException("[Error]: fuel is null!");
             if (fuel != Fuel.Petrol) throw new CarFueledNotWithPetrolException();
 
             engine.setStartEngine();
             System.out.println("The car started driving!");
         } catch (DriverIsNotFastenedException ex) {
-            throw new DriverIsNotFastenedException(ex.getMessage(), "THE_DRIVER_IS_NOT_FASTENED_EXCEPTION");
+            throw new DriverIsNotFastenedRuntimeException();
         } catch (CarFueledNotWithPetrolException exc) {
-            throw new CarFueledNotWithPetrolException(exc.getMessage(), "THE_CAR_IS_FUELED_NOT_WITH_PETROL_EXCEPTION");
+            throw new CarFueledNotWithPetrolRuntimeException();
         }
     }
 }

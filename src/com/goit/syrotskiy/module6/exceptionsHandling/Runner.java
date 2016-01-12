@@ -1,5 +1,7 @@
 package com.goit.syrotskiy.module6.exceptionsHandling;
 
+import com.goit.syrotskiy.module6.exceptionsHandlingMod.*;
+
 public class Runner {
 
     public static void main(String[] args) {
@@ -9,25 +11,21 @@ public class Runner {
             //driver.setFastened(true);
             Car car = new Car();
             //car.setDriver(driver);
-            //car.setFuel(Fuel.Petrol);
+            //car.setFuel(Fuel.Diesel);
             car.move();
-        } catch (CarException ex) {
+        } catch (CarRuntimeException ex) {
             processCarExceptions(ex);
         }
     }
 
-    public static void processCarExceptions(CarException ex) {
-        switch(ex.getErrorCode()) {
-            case "THE_DRIVER_IS_NOT_FASTENED_EXCEPTION":
-                System.out.println("[Error]: first fasten your seat belt, then you can go!");
-                break;
-            case "THE_CAR_IS_FUELED_NOT_WITH_PETROL_EXCEPTION":
-                System.out.println("[Error]: the car can't drive, first fuel it with petrol!");
-                break;
-             default:
-                 System.out.println("[Error]: Unknown exception raised. " + ex.getMessage());
-                 ex.printStackTrace();
+    public static void processCarExceptions(CarRuntimeException ex) {
+        if (ex instanceof DriverIsNotFastenedRuntimeException) {
+            System.out.println("[Error]: first fasten your seat belt, then you can go!");
+        } else if (ex instanceof CarFueledNotWithPetrolRuntimeException) {
+            System.out.println("[Error]: the car can't drive, first fuel it with petrol!");
+        } else {
+            System.out.println("[Error]: Unknown exception raised. " + ex.getMessage());
+            ex.printStackTrace();
         }
     }
-
 }
