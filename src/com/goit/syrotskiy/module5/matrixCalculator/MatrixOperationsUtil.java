@@ -2,7 +2,7 @@ package com.goit.syrotskiy.module5.matrixCalculator;
 
 public class MatrixOperationsUtil {
     public static int[][] matrixAddition(int[][] firstMatrix, int[][] secondMatrix) throws InappropriateMatrixDimensionException {
-        if ((firstMatrix.length != secondMatrix.length) && (firstMatrix[0].length != secondMatrix[0].length)) {
+        if ((firstMatrix.length != secondMatrix.length) || (firstMatrix[0].length != secondMatrix[0].length)) {
             throw new InappropriateMatrixDimensionException();
         }
         int[][] resultMatrix = new int[firstMatrix.length][firstMatrix[0].length];
