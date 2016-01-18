@@ -1,7 +1,4 @@
-package com.goit.syrotskiy.module7.ConsoleCalculator;
-
-import com.goit.syrotskiy.module7.ConsoleCalculator.CalculatorRunner;
-import com.goit.syrotskiy.module7.ConsoleCalculator.DivisionByZeroCalculatorException;
+package com.goit.syrotskiy.module7.ronsoleCalculator;
 
 public class Runner {
     public static void main(String[] args) {
