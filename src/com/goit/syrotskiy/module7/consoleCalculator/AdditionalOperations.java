@@ -1,4 +1,4 @@
-package com.goit.syrotskiy.module7.ronsoleCalculator;
+package com.goit.syrotskiy.module7.consoleCalculator;
 
 public interface AdditionalOperations extends StandardOperations {
     String SIN = "sin";
