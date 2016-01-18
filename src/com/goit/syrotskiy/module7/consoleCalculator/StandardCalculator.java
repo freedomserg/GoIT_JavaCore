@@ -29,7 +29,7 @@ public class StandardCalculator {
         return memory;
     }
 
-    public double runCalculator() {
+    public double runCalculator() throws IOException {
         BufferedReader choiceReader = new BufferedReader(new InputStreamReader(System.in));
         double finalRes = 0;
         boolean proceed = true;
@@ -38,35 +38,32 @@ public class StandardCalculator {
             boolean incorrectChoice = true;
 
             while(incorrectChoice) {
-                try {
-                    System.out.print("proceed calculations with received result?(y/n): ");
-                    String choice = choiceReader.readLine();
-                    switch (choice) {
-                        case "y":
-                            setMemory(intermediateRes);
-                            System.out.println("The intermediate result was saved in memory!");
-                            intermediateRes = receiveData();
-                            incorrectChoice = false;
-                            break;
-                        case "n":
-                            finalRes = intermediateRes;
-                            incorrectChoice = false;
-                            proceed = false;
-                            break;
-                        default:
-                            System.out.println("[ERROR]: incorrect choice " + "<" + choice + ">! Try again!");
-                    }
-                } catch (IOException ex) {
-                    System.out.println("[ERROR]: data input error! Try again!");
+                System.out.print("proceed calculations with received result?(y/n): ");
+                String choice = choiceReader.readLine();
+                switch (choice) {
+                    case "y":
+                        setMemory(intermediateRes);
+                        System.out.println("The intermediate result was saved in memory!");
+                        intermediateRes = receiveData();
+                        incorrectChoice = false;
+                        break;
+                    case "n":
+                        finalRes = intermediateRes;
+                        incorrectChoice = false;
+                        proceed = false;
+                        break;
+                    default:
+                        System.out.println("[ERROR]: incorrect choice " + "<" + choice + ">! Try again!");
                 }
             }
         }
         return finalRes;
     }
 
-    private double receiveData() {
+
+    private double receiveData() throws IOException {
         System.out.println("m - retrieve from memory, current value in memory: " + getMemory());
-        System.out.print("digit = ");
+        System.out.print("number = ");
         double operand1 = inputData();
         System.out.print("operation: ");
         String operation = chooseOperation();
@@ -75,20 +72,21 @@ public class StandardCalculator {
             checkInputData(operation, operand1);
             return doOperation(operation, operand1);
         }
-
         System.out.println("m - retrieve from memory, current value in memory: " + getMemory());
-        System.out.print("digit = ");
+        System.out.print("number = ");
         double operand2 = inputData();
 
         checkInputData(operation, operand1, operand2);
         return doOperation(operation, operand1, operand2);
     }
 
+
     protected void checkInputData(String operation, double... operands) {
-        if (operation.equals(listOfStandardOperations.get(listOfStandardOperations.indexOf("/"))) && operands[1] == 0) {
+        if (operation.equals(StandardOperations.DIVISION) && operands[1] == 0) {
             throw new DivisionByZeroCalculatorException();
         }
     }
+
 
     protected boolean searchOperationWithOneOperand(String operation) {
         return (operation.equals(StandardOperations.SQUARING) ||
@@ -97,48 +95,52 @@ public class StandardCalculator {
                 operation.equals(StandardOperations.CUBE_ROOT));
     }
 
-    private double inputData() {
+
+    private double inputData() throws IOException {
         BufferedReader dataReader = new BufferedReader(new InputStreamReader(System.in));
-        double digit = 0;
+        double number = 0;
+        boolean incorrectData = true;
 
-        try {
-            String inpStr = dataReader.readLine();
+        while(incorrectData) {
+            try {
+                String inpStr = dataReader.readLine();
 
-            switch (inpStr) {
-                case "(":
-                    System.out.println();
-                    digit = receiveData();
-                    System.out.println(")");
-                    System.out.println();
-                    break;
-                case "m":
-                    digit = getMemory();
-                    break;
-                default:
-                    digit = Double.parseDouble(inpStr);
+                switch (inpStr) {
+                    case "(":
+                        System.out.println();
+                        number = receiveData();
+                        System.out.println(")");
+                        System.out.println();
+                        incorrectData = false;
+                        break;
+                    case "m":
+                        number = getMemory();
+                        incorrectData = false;
+                        break;
+                    default:
+                        number = Double.parseDouble(inpStr);
+                        incorrectData = false;
+                }
+            } catch (NumberFormatException ex) {
+                System.out.println("[ERROR]: you should enter a floating-point number! try again!");
+                System.out.print("number = ");
             }
-        } catch (IOException ex) {
-            System.out.println("[ERROR]: data input error!");
         }
-        return digit;
+        return number;
     }
 
-    private String chooseOperation() {
+
+    private String chooseOperation() throws IOException {
         BufferedReader operationReader = new BufferedReader(new InputStreamReader(System.in));
         String operation = "";
 
         boolean incorrectChoice = true;
         while(incorrectChoice) {
-            try {
-                String input = operationReader.readLine();
-                if (checkOperation(input)) {
-                    operation = input;
-                    incorrectChoice = false;
-                } else {
-                    System.out.println("[ERROR]: incorrect operation! Try again!");
-                    System.out.print("operation: ");
-                }
-            } catch (IOException ex) {
+            String input = operationReader.readLine();
+            if (checkOperation(input)) {
+                operation = input;
+                incorrectChoice = false;
+            } else {
                 System.out.println("[ERROR]: incorrect operation! Try again!");
                 System.out.print("operation: ");
             }
