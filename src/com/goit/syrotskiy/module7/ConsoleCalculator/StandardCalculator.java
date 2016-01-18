@@ -1,4 +1,4 @@
-package com.goit.syrotskiy.module7;
+package com.goit.syrotskiy.module7.ConsoleCalculator;
 
 import java.io.BufferedReader;
 import java.io.IOException;

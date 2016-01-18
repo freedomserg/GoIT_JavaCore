@@ -1,4 +1,4 @@
-package com.goit.syrotskiy.module7;
+package com.goit.syrotskiy.module7.ConsoleCalculator;
 
 import java.util.ArrayList;
 import java.util.List;

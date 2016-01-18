@@ -1,4 +1,4 @@
-package com.goit.syrotskiy.module7;
+package com.goit.syrotskiy.module7.ConsoleCalculator;
 
 public interface StandardOperations {
     String ADDITION = "+";
