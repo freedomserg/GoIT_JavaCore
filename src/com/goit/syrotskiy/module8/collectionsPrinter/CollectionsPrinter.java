@@ -4,7 +4,7 @@ import java.util.Set;
 
 public class CollectionsPrinter {
 
-    public static void collectionsPrinter(Set fSet) {
+    public static void printCollection(Set fSet) {
         System.out.println("TYPE\t\t" + "NAME\t\t" + "OTHER PROPERTIES");
         for (Object o : fSet) {
             System.out.println("==========================================");

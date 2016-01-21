@@ -21,6 +21,6 @@ public class Runner {
         fSet.add(tFile);
         fSet.add(dFile);
 
-        CollectionsPrinter.collectionsPrinter(fSet);
+        CollectionsPrinter.printCollection(fSet);
     }
 }
