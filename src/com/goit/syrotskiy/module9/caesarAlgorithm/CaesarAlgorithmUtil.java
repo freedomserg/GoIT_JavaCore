@@ -1,6 +1,6 @@
 package com.goit.syrotskiy.module9.caesarAlgorithm;
 
-public class CaesarAlgorithm {
+public class CaesarAlgorithmUtil {
     private static String alphabet = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789()[]/?<>\'\"=-+*:;.,\t ";
 
     public static String encode(String text, int key){

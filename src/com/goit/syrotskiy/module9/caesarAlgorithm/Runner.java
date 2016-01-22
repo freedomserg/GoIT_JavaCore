@@ -26,8 +26,8 @@ public class Runner {
 
         String collectionToStringView = fSet.toString().replace("[", "").replace("]", "");
         int key = receiveKey();
-        String encodeContent = CaesarAlgorithm.encode(collectionToStringView, key);
-        String decodeContent = CaesarAlgorithm.decode(encodeContent, key);
+        String encodeContent = CaesarAlgorithmUtil.encode(collectionToStringView, key);
+        String decodeContent = CaesarAlgorithmUtil.decode(encodeContent, key);
 
         System.out.println("Initial content: " + collectionToStringView + "\n"
                 + "Encoded content: " + encodeContent + "\n"
