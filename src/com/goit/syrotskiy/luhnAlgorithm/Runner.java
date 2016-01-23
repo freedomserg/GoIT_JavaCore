@@ -6,7 +6,7 @@ import java.io.InputStreamReader;
 
 public class Runner {
     public static void main(String[] args) throws IOException {
-        if(LuhnAlgorithm.validateData(inputData())) {
+        if(LuhnAlgorithmUtil.validateData(inputData())) {
             System.out.println("Validation successed!");
         } else System.out.println("Validation failed!");
     }
@@ -15,18 +15,21 @@ public class Runner {
         BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
         int[] inputArrayOfDigits = new int[16];
         System.out.print("Please, enter the number of your credit card (16 digits): ");
-
         while(true) {
             String inputData = reader.readLine();
             while(true) {
-                if (inputData.length() != 16) {
+                try {
+                    if (inputData.length() != 16) {
+                        throw new IncorrectNumberOfDigitsInCardException();
+                    } else {
+                        break;
+                    }
+                } catch (IncorrectNumberOfDigitsInCardException ex) {
                     System.out.println("[ERROR]: card number contains 16 digits! Try again!");
+                    System.out.print("Please, enter the number of your credit card (16 digits): ");
                     inputData = reader.readLine();
-                } else {
-                    break;
                 }
             }
-
             try {
                 String[] dataStringArray = inputData.split("");
                 int i = 0;
