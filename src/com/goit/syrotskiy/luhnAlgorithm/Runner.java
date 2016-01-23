@@ -13,25 +13,13 @@ public class Runner {
 
     private static int[] inputData() throws IOException {
         BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
-        int[] inputArrayOfDigits = new int[16];
-        System.out.print("Please, enter the number of your credit card (16 digits): ");
+        int[] inputArrayOfDigits = null;
+        System.out.print("Please, enter the number of your credit card: ");
         while(true) {
             String inputData = reader.readLine();
-            while(true) {
-                try {
-                    if (inputData.length() != 16) {
-                        throw new IncorrectNumberOfDigitsInCardException();
-                    } else {
-                        break;
-                    }
-                } catch (IncorrectNumberOfDigitsInCardException ex) {
-                    System.out.println("[ERROR]: card number contains 16 digits! Try again!");
-                    System.out.print("Please, enter the number of your credit card (16 digits): ");
-                    inputData = reader.readLine();
-                }
-            }
             try {
                 String[] dataStringArray = inputData.split("");
+                inputArrayOfDigits = new int[dataStringArray.length];
                 int i = 0;
                 for (String str : dataStringArray) {
                     inputArrayOfDigits[i] = Integer.parseInt(str);
