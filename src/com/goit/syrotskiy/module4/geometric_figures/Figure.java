@@ -4,4 +4,8 @@ public abstract class Figure {
     protected double square;
 
     public abstract void calculateSquare();
+
+    public double getSquare() {
+        return square;
+    }
 }
