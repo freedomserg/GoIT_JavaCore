@@ -6,7 +6,7 @@ import java.io.InputStreamReader;
 
 public class Runner {
     public static void main(String[] args) throws IOException {
-        if(LuhnAlgorithmUtil.validateData(inputData())) {
+        if(LuhnAlgorithmUtil.isValidCardNumber(inputData())) {
             System.out.println("Validation successed!");
         } else System.out.println("Validation failed!");
     }

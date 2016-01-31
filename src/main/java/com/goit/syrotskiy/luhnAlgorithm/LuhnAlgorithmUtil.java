@@ -3,7 +3,7 @@ package com.goit.syrotskiy.luhnAlgorithm;
 public class LuhnAlgorithmUtil {
     public static final int LUHN_LIMIT = 9;
 
-    public static boolean validateData(int[] args) {
+    public static boolean isValidCardNumber(int[] args) {
         for (int i = args.length - 1; i >= 0; i--) {
             if (args.length % 2 == 0) {
                 if (i % 2 != 0) continue;
