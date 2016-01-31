@@ -1,6 +1,8 @@
 package com.goit.syrotskiy.luhnAlgorithm;
 
 public class LuhnAlgorithmUtil {
+    public static final int LUHN_LIMIT = 9;
+
     public static boolean validateData(int[] args) {
         for (int i = args.length - 1; i >= 0; i--) {
             if (args.length % 2 == 0) {
@@ -20,7 +22,7 @@ public class LuhnAlgorithmUtil {
 
     private static int modifyData(int digit) {
         digit *= 2;
-        if (digit > 9) {
+        if (digit > LUHN_LIMIT) {
             digit = digit%10 + digit/10;
         }
         return digit;
