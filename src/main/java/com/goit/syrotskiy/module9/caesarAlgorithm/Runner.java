@@ -1,15 +1,14 @@
 package com.goit.syrotskiy.module9.caesarAlgorithm;
 
 import com.goit.syrotskiy.module3.files.*;
-import com.goit.syrotskiy.module8.collectionsPrinter.FileNameComparator;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Scanner;
-import java.util.Set;
-import java.util.TreeSet;
 
 public class Runner {
     public static void main(String[] args) {
-        Set<File> fSet = new TreeSet<>(new FileNameComparator());
+        List<File> files = new ArrayList<>();
         File aFile = new AudioFile("MySong");
         File iFile = new ImageFile("MyPicture");
         File tFile = new TextFile("MyText");
@@ -19,12 +18,12 @@ public class Runner {
         dFile.getDirectory().add(iFile);
         dFile.getDirectory().add(tFile);
 
-        fSet.add(aFile);
-        fSet.add(iFile);
-        fSet.add(tFile);
-        fSet.add(dFile);
+        files.add(aFile);
+        files.add(iFile);
+        files.add(tFile);
+        files.add(dFile);
 
-        String collectionToStringView = fSet.toString().replace("[", "").replace("]", "");
+        String collectionToStringView = files.toString().replace("[", "").replace("]", "");
         int key = receiveKey();
         String encodeContent = CaesarAlgorithmUtil.encode(collectionToStringView, key);
         String decodeContent = CaesarAlgorithmUtil.decode(encodeContent, key);

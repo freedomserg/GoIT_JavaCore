@@ -1,14 +1,16 @@
 package com.goit.syrotskiy.module8.collectionsPrinter;
 
-import java.util.Set;
+import com.goit.syrotskiy.module3.files.File;
+
+import java.util.Collection;
 
 public class CollectionsPrinter {
 
-    public static void printCollection(Set fSet) {
+    public static void printCollection(Collection<File> files) {
         System.out.println("TYPE\t\t" + "NAME\t\t" + "OTHER PROPERTIES");
-        for (Object o : fSet) {
+        for (File file : files) {
             System.out.println("==========================================");
-            System.out.println(o.toString());
+            System.out.println(file.toString());
         }
 
     }

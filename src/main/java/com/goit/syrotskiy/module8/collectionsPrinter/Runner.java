@@ -6,7 +6,7 @@ import java.util.*;
 
 public class Runner {
     public static void main(String[] args) {
-        Set<File> fSet = new TreeSet<>(new FileNameComparator());
+        List<File> files = new ArrayList<>();
         File aFile = new AudioFile("MySong");
         File iFile = new ImageFile("MyPicture");
         File tFile = new TextFile("MyText");
@@ -16,11 +16,12 @@ public class Runner {
         dFile.getDirectory().add(iFile);
         dFile.getDirectory().add(tFile);
 
-        fSet.add(aFile);
-        fSet.add(iFile);
-        fSet.add(tFile);
-        fSet.add(dFile);
+        files.add(aFile);
+        files.add(iFile);
+        files.add(tFile);
+        files.add(dFile);
 
-        CollectionsPrinter.printCollection(fSet);
+        Collections.sort(files);
+        CollectionsPrinter.printCollection(files);
     }
 }
