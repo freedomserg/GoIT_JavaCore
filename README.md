@@ -1,3 +1,3 @@
 # GoJavaOnline
 
-Home tasks for the GoJavaOnline course
+Home tasks of the GoIT_JavaBasic course
